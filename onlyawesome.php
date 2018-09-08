@@ -19,7 +19,7 @@ $FILE_PATTERN      = '*.{html,php}';
 
 $YOUR_FILES_PATH   = '/xxxxx/'; //must have / in the end
 
-$FONT_AWESOME_PATH = '/xxxxx/'; //must have / in the end
+$FONT_AWESOME_PATH = '/yyyy/'; //must have / in the end
 
 // =============================================================================
 
@@ -45,9 +45,9 @@ foreach($EXPECTED as $k => $f)
   //look for the icon files we have
   if(file_exists($FONT_AWESOME_PATH.$f))
   {
-    $ALLS[$found] = file($f);
+    $ALLS[$found] = file($FONT_AWESOME_PATH.$f);
     $VALID_JS[$found] = $fa[$k];
-    echo "Icon file found: ",basename($f),PHP_EOL;
+    echo "Icon file found: ",$f,PHP_EOL;
 
     $ICONS_DATA[$found] = [];
 
@@ -100,7 +100,7 @@ function AwesomeFile($f)
       $name = substr($data, $ix + 5, $ex - $ix - 5);
       if(substr($name,0, 3) != 'fa-')
       {
-        echo "Broken Font Awesome class '$name' does not start with 'fa-', around text: ", substr($data, $ix, 50),PHP_EOL;
+        echo "Broken Font Awesome in file $f class '$name' does not start with 'fa-', around text: ", substr($data, $ix, 50),PHP_EOL;
         return;
       }
       AwesomeAppend($k, substr($name, 3));
