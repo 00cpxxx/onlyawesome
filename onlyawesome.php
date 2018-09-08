@@ -21,6 +21,8 @@ $YOUR_FILES_PATH   = '/xxxxx/'; //must have / in the end
 
 $FONT_AWESOME_PATH = '/yyyy/'; //must have / in the end
 
+$RECURSIVE_SEARCH = true; //look into subfolders
+
 // =============================================================================
 
 if(!is_dir($YOUR_FILES_PATH))
@@ -84,6 +86,8 @@ function AwesomeFile($f)
     return;
   }
 
+  //echo "Testing file $f",PHP_EOL;
+
   $ix = -1;
   foreach($GLOBALS['VALID_JS'] as $k => $kind)
     while(($ix = strpos($data, $kind, $ix + 1))!==false)
@@ -134,12 +138,11 @@ function AwesomeDir($d)
 {
   //loop all files in the folder
   foreach(glob($d.$GLOBALS['FILE_PATTERN'], GLOB_BRACE) as $f)
-  {
-    if(is_dir($f))
-      AwesomeDir($f);
-    else
-      AwesomeFile($f);
-  }
+    AwesomeFile($f);
+
+  if($GLOBALS['RECURSIVE_SEARCH'])
+    foreach(glob($d.'*', GLOB_ONLYDIR) as $d)
+      AwesomeDir($d.'/');
 }
 
 AwesomeDir($YOUR_FILES_PATH);
