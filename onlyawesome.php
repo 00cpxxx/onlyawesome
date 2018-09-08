@@ -34,7 +34,7 @@ $MAIN_FILE = $FONT_AWESOME_PATH.'fontawesome.js';
 if(!is_dir($FONT_AWESOME_PATH) || !file_exists($MAIN_FILE))
   die('Please edit this file specifying a valid folder where the Font Awesome and fontawesome.js files reside.'.PHP_EOL);
 
-//patters we look for inside source files
+//patterns we look for inside source files
 $fa = ['"fas ', '"far ', '"fal ', '"fab '];
 
 $VALID_JS = [];
@@ -72,7 +72,7 @@ foreach($EXPECTED as $k => $f)
 }
 
 if(!$found)
-  die('Could not find any icon files (eg solid.js, light.js...)');
+  die('Could not find any icon files (eg solid.js, light.js...)'.PHP_EOL);
 
 $ICONS = [];
 
@@ -125,7 +125,7 @@ function AwesomeAppend($k, $icon)
     {
       $GLOBALS['ICONS'][] = $k.$icon;
       $GLOBALS['ICONS_DATA'][$k][] = $line;
-      echo "Icon found: ",$icon,PHP_EOL;
+      echo "Icon found: ",substr($GLOBALS['VALID_JS'][$k], 1, -1),' ',$icon,PHP_EOL;
       return;
     }
   }
@@ -156,6 +156,6 @@ foreach($ICONS_DATA as $k => &$v)
 }
 
 if(!file_put_contents('onlyawesome.js', $mix))
-  die('Failed to write output file onlyawesome.js to current directory.');
+  die('Failed to write output file onlyawesome.js to current directory.'.PHP_EOL);
 
 echo 'Process finished! File onlyawesome.js created, icons found: ',count($ICONS),PHP_EOL;
