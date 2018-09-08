@@ -17,9 +17,9 @@
 
 $FILE_PATTERN      = '*.{html,php}';
 
-$YOUR_FILES_PATH   = '/media/ramdisk/rental/site/'; //must have / in the end
+$YOUR_FILES_PATH   = '/xxxxx/'; //must have / in the end
 
-$FONT_AWESOME_PATH = '/media/ramdisk/rental/site/'; //must have / in the end
+$FONT_AWESOME_PATH = '/xxxxx/'; //must have / in the end
 
 // =============================================================================
 
