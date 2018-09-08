@@ -32,12 +32,12 @@ Icon file found: solid.js
 Icon file found: regular.js
 Icon file found: light.js
 Icon file found: brands.js
-Icon found: arrow-to-bottom
-Icon found: spinner
-Icon found: phone
-Icon found: envelope
-Icon found: twitter-square
-Icon found: linkedin
-Icon found: facebook-square
+Icon found: fal arrow-to-bottom
+Icon found: fal spinner
+Icon found: fas phone
+Icon found: far envelope
+Icon found: fab twitter-square
+Icon found: fab linkedin
+Icon found: fab facebook-square
 Process finished! File onlyawesome.js created, icons found: 7
 </pre>
