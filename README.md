@@ -25,7 +25,7 @@ Open the PHP file and change the first 3 variables: $FILE_PATTERN, $YOUR_FILES_P
 
 Run the script in console and watch the output.
 
-#Example run
+# Example run
 <pre>
 bruno@Note2:~$ php onlyawesome.php 
 Icon file found: solid.js
